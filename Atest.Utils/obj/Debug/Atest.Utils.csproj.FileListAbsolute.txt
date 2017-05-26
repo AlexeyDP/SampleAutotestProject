@@ -1,0 +1,10 @@
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\bin\Debug\Atest.Utils.dll.config
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\bin\Debug\Atest.Utils.dll
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\bin\Debug\Atest.Utils.pdb
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\bin\Debug\WebDriver.dll
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\bin\Debug\WebDriver.Support.dll
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\bin\Debug\WebDriver.xml
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\bin\Debug\WebDriver.Support.xml
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\obj\Debug\Atest.Utils.csprojResolveAssemblyReference.cache
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\obj\Debug\Atest.Utils.dll
+C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\obj\Debug\Atest.Utils.pdb
