@@ -8,3 +8,13 @@ C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\At
 C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\obj\Debug\Atest.Utils.csprojResolveAssemblyReference.cache
 C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\obj\Debug\Atest.Utils.dll
 C:\Users\oleksiy.bozhko\documents\visual studio 2015\Projects\PhptravelsAtest\Atest.Utils\obj\Debug\Atest.Utils.pdb
+d:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\Atest.Utils.dll.config
+d:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\Atest.Utils.dll
+d:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\Atest.Utils.pdb
+d:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.dll
+d:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.Support.dll
+d:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.xml
+d:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.Support.xml
+d:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.csprojResolveAssemblyReference.cache
+d:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.dll
+d:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.pdb

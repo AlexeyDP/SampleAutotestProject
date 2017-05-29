@@ -22,12 +22,40 @@ namespace Atest.Utils
         [Description("Google Chrome")]
         GH
     }
-    public class Browser
+    public static class Browser
     {
+       
+
         #region Private
-        private IWebDriver _webDriver;
-        private Browsers _selectedBrowser;         
-        private ChromeDriver StartChrome()
+        private static IWebDriver _webDriver;
+        private static IWebDriver WebDriver
+        {
+            get { return _webDriver ?? StartWebDriver(); }
+        }
+
+        private static IWebDriver StartWebDriver()
+        {
+            if (_webDriver != null) return _webDriver;
+
+            switch (SelectedBrowser)
+            {
+                case Browsers.FF:
+                    _webDriver = StartFireFox();
+                    break;
+                case Browsers.GH:
+                    _webDriver = StartChrome();
+                    break;
+                default:
+                    throw new Exception($"Unknown browser {SelectedBrowser} selected");
+            }
+
+            _webDriver.Manage().Window.Maximize();
+            _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+
+            return WebDriver;
+        }
+
+        private static ChromeDriver StartChrome()
         {
             var options = new ChromeOptions();
             options.AddUserProfilePreference("download.prompt_for_download", false);
@@ -37,7 +65,8 @@ namespace Atest.Utils
 
             return new ChromeDriver(options);
         }
-        private FirefoxDriver StartFireFox()
+
+        private static FirefoxDriver StartFireFox()
         {
             FirefoxProfile ffp = new FirefoxProfile();
             ffp.AcceptUntrustedCertificates = true;
@@ -48,49 +77,32 @@ namespace Atest.Utils
 
             return new FirefoxDriver(ffp);
         }
+
         #endregion Private
 
-        #region Constructors
-        /// <summary>
-        /// Temporary solution. Will be value from config in the future
-        /// </summary>
-        public Browser()
-        {
-            _selectedBrowser = Browsers.GH;
-        }
-
-        public Browser(Browsers browserType)
-        {
-            _selectedBrowser = browserType;
-        }
-
-        #endregion Constructors
-
         #region Public
-        public void StartDriver()
+        public static Browsers SelectedBrowser
         {
-            switch (_selectedBrowser)
-            {
-                case Browsers.FF:
-                    _webDriver = StartFireFox();
-                    break;
-                case Browsers.GH:
-                    _webDriver = StartChrome();
-                    break;
-                default:
-                    throw new Exception($"Unknown browser {_selectedBrowser} selected");
-            }
-
-            _webDriver.Manage().Window.Maximize();
-
+            get { return Browsers.GH; }
+        }
+        public static void Start()
+        {
+            _webDriver = StartWebDriver();
         }
 
-        public void CloseDriver()
+        public static void Quit()
         {
             if (_webDriver == null) return;
             _webDriver.Quit();
-        }       
+            _webDriver = null;
+        }
         #endregion Public
 
+
+
+
+
+
     }
+
 }

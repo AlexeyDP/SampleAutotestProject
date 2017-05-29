@@ -1,0 +1,11 @@
+D:\CustomProject\SampleAutotestProject\Atest.Suites\obj\Debug\Atest.Suites.csprojResolveAssemblyReference.cache
+D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\Atest.Suites.dll
+D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\Atest.Suites.pdb
+D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\Atest.Utils.dll
+D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\nunit.framework.dll
+D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\WebDriver.dll
+D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\Atest.Utils.pdb
+D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\nunit.framework.xml
+D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\WebDriver.xml
+D:\CustomProject\SampleAutotestProject\Atest.Suites\obj\Debug\Atest.Suites.dll
+D:\CustomProject\SampleAutotestProject\Atest.Suites\obj\Debug\Atest.Suites.pdb
