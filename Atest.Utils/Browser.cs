@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,12 +26,12 @@ namespace Atest.Utils
     public static class Browser
     {
        
-
         #region Private
         private static IWebDriver _webDriver;
-        private static IWebDriver WebDriver
+        
+        private static Browsers SelectedBrowser
         {
-            get { return _webDriver ?? StartWebDriver(); }
+            get { return Browsers.GH; }
         }
 
         private static IWebDriver StartWebDriver()
@@ -81,9 +82,9 @@ namespace Atest.Utils
         #endregion Private
 
         #region Public
-        public static Browsers SelectedBrowser
+        public static IWebDriver WebDriver
         {
-            get { return Browsers.GH; }
+            get { return _webDriver ?? StartWebDriver(); }
         }
         public static void Start()
         {
@@ -96,6 +97,27 @@ namespace Atest.Utils
             _webDriver.Quit();
             _webDriver = null;
         }
+
+        public static void Navigate(string url)
+        {
+            WebDriver.Navigate().GoToUrl(url);            
+        }
+
+        public static string Title()
+        {
+            WaitAjax();
+            return WebDriver.Title;
+        }
+
+        #region Waits
+        public static void WaitAjax()
+        {
+            var wait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(60));
+            wait.Until(d => (bool)(d as IJavaScriptExecutor).ExecuteScript(
+                 "return (typeof($) === 'undefined') ? true : !$.active;"
+            ));
+        }
+        #endregion Waits
         #endregion Public
 
 

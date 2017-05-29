@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atest.Pages
 {
-    public class Class1
+    class AccountPage : BasePage
     {
     }
 }
