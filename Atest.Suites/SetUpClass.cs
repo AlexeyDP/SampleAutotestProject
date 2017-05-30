@@ -1,27 +1,22 @@
-﻿using Atest.Utils;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
 
 namespace Atest.Suites
 {
     [SetUpFixture]
     public class SetUpClass
     {
-        
+        BaseTest testSuite = new BaseTest();
         [OneTimeSetUp]
-        public void RunBeforeAnyTests()
+        public void RunBeforeTest()
         {
-            Browser.Start();
+            
+            testSuite.StartDriver();
         }
 
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
-            Browser.Quit();
+            testSuite.QuitDriver();
         }
     }
 }

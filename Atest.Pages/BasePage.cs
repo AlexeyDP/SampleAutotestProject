@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Atest.Utils.Browser;
+﻿using OpenQA.Selenium;
 
 namespace Atest.Pages
 {
-    
+
     public abstract class BasePage
     {
         private readonly string PageUrl;
         private readonly string PageTitle;
+        private IWebDriver _drvier;
+
+        public BasePage (IWebDriver webdriver)
+        {
+            _drvier = webdriver;
+        }
+
         public void Open()
         {
-            Navigate(PageUrl);
+            _drvier.Navigate().GoToUrl(PageUrl); 
         }
 
         public bool IsOpened()
         {
-            return PageTitle.Equals(WebDriver.Title);
+            return PageTitle.Equals(_drvier.Title);
         }
     }
 }

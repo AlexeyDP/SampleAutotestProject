@@ -49,15 +49,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountPage.cs" />
     <Compile Include="BasePage.cs" />
     <Compile Include="LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Atest.Utils\Atest.Utils.csproj">
-      <Project>{025b5053-3631-4732-9f78-4da4b9af9878}</Project>
-      <Name>Atest.Utils</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

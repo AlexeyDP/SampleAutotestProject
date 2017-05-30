@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atest.Utils", "Atest.Utils\Atest.Utils.csproj", "{025B5053-3631-4732-9F78-4DA4B9AF9878}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atest.Suites", "Atest.Suites\Atest.Suites.csproj", "{616248FE-AF60-41C6-8EE6-A235BD090AB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atest.Pages", "Atest.Pages\Atest.Pages.csproj", "{E3F66A55-5F4B-42B9-8C33-8A60193C9689}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{025B5053-3631-4732-9F78-4DA4B9AF9878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{025B5053-3631-4732-9F78-4DA4B9AF9878}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{025B5053-3631-4732-9F78-4DA4B9AF9878}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{025B5053-3631-4732-9F78-4DA4B9AF9878}.Release|Any CPU.Build.0 = Release|Any CPU
 		{616248FE-AF60-41C6-8EE6-A235BD090AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{616248FE-AF60-41C6-8EE6-A235BD090AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{616248FE-AF60-41C6-8EE6-A235BD090AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU

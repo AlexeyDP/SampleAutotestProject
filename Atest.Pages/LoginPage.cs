@@ -1,12 +1,5 @@
-﻿using Atest.Utils;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Atest.Utils.Browser;
 
 namespace Atest.Pages
 {
@@ -26,6 +19,10 @@ namespace Atest.Pages
 
         private readonly string PageUrl = "http:////www.phptravels.net//login";
         private readonly string PageTitle = "Login";
+        
+        public LoginPage(IWebDriver webdriver) : base(webdriver)
+        {
+        }
 
         public AccountPage LoginAs(string email, string password, bool remember = false)
         {
