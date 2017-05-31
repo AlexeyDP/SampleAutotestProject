@@ -8,3 +8,4 @@ D:\CustomProject\SampleAutotestProject\Atest.Pages\bin\Debug\WebDriver.xml
 D:\CustomProject\SampleAutotestProject\Atest.Pages\bin\Debug\WebDriver.Support.xml
 D:\CustomProject\SampleAutotestProject\Atest.Pages\obj\Debug\Atest.Pages.dll
 D:\CustomProject\SampleAutotestProject\Atest.Pages\obj\Debug\Atest.Pages.pdb
+D:\CustomProject\SampleAutotestProject\Atest.Pages\obj\Debug\Atest.Pages.csprojResolveAssemblyReference.cache
