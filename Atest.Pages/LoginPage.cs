@@ -3,7 +3,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace Atest.Pages
 {
-    class LoginPage : BasePage
+    public class LoginPage 
     {
         [FindsBy(How = How.Name, Using = "username")]
         protected IWebElement userEmail;
@@ -18,12 +18,21 @@ namespace Atest.Pages
         protected IWebElement loginButton;
 
         private readonly string PageUrl = "http:////www.phptravels.net//login";
-        private readonly string PageTitle = "Login";
-        
-        public LoginPage(IWebDriver webdriver) : base(webdriver)
-        {
-        }
+        private  string PageTitle = "Login";
+        private IWebDriver _driver;
 
+        public string Title
+        {
+            get { return PageTitle; }
+        }       
+        
+        public LoginPage(IWebDriver driver)
+        {
+            _driver = driver;
+            _driver.Navigate().GoToUrl(PageUrl);            
+        }
+        
+                
         public AccountPage LoginAs(string email, string password, bool remember = false)
         {
             userEmail.SendKeys(email);
