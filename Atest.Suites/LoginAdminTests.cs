@@ -1,4 +1,6 @@
 ﻿using Atest.Pages;
+using Atest.Pages.Data;
+using Atest.Suites.TestCaseSources;
 using Atest.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -12,20 +14,25 @@ namespace Atest.Suites
         private IWebDriver _driver;
         private LoginPage _loginPage;
 
-        [OneTimeSetUp]
+        /// <summary>
+        /// Not good solution from performance perspective to open browser before any tests in real project!
+        /// </summary>
+        
+        #region SetUp and TearDown
+        [SetUp]
         public void StartTests()
         {
             IBrowser browser = new Browser();
             _driver = browser.GetChromeDriver();
-            _loginPage = new LoginPage(_driver);
-            PageFactory.InitElements(_driver, _loginPage);
+            _loginPage = new LoginPage(_driver);            
         }
 
-       [OneTimeTearDown]
-       public void EndTests()
+        [TearDown]
+        public void EndTests()
         {
             _driver.Quit();
         }
+        #endregion SetUp and TearDown
 
         [Test]
         public void OpenLogin()
@@ -34,6 +41,19 @@ namespace Atest.Suites
             
         }
 
+        [Test, TestCaseSource(typeof(UserLoginData), "PositiveLogins")]
+        public string PositiveLoginTest(string login, string password)
+        {
+            AccountPage accPage = _loginPage.LoginAs(new UserData(login, password));
+            return accPage.Title;
+        }
+
+        [Test, TestCaseSource(typeof(UserLoginData), "NegativeLogins")]
+        public string NegativeLoginTest(string login, string password)
+        {
+            _loginPage.LoginAs(new UserData(login, password));
+            return _loginPage.invalidLoginAlertText;
+        }
              
 
     }

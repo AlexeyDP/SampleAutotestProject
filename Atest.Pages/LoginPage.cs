@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Atest.Pages.Data;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -36,13 +37,14 @@ namespace Atest.Pages
         public IWebElement rememberMeCheckBox { get { return _driver.FindElement(By.Id("remember-me")); } }
 
         public IWebElement loginButton { get { return _driver.FindElement(By.CssSelector("#loginfrm > div.wow.fadeIn.animated > button")); } }
+        public string invalidLoginAlertText { get { return _driver.FindElement(By.ClassName("alert alert-danger")).Text; } }
 
         #endregion Elements
                  
-        public AccountPage LoginAs(string email, string password, bool remember = false)
+        public AccountPage LoginAs(UserData userCredentials, bool remember = false)
         {
-            userEmail.SendKeys(email);
-            userPassword.SendKeys(password);
+            userEmail.SendKeys(userCredentials.userEmail);
+            userPassword.SendKeys(userCredentials.userPass);
             if (remember) { rememberMeCheckBox.Click(); }
             loginButton.Click();
 

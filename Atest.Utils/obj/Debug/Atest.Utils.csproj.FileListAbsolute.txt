@@ -1,9 +1,11 @@
 D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\Atest.Utils.dll
 D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\Atest.Utils.pdb
+D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\nunit.framework.dll
 D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.dll
 D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.Support.dll
+D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\nunit.framework.xml
 D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.xml
 D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.Support.xml
+D:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.csprojResolveAssemblyReference.cache
 D:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.dll
 D:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.pdb
-D:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.csprojResolveAssemblyReference.cache
