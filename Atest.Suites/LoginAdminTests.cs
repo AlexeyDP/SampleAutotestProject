@@ -13,11 +13,7 @@ namespace Atest.Suites
     {
         private IWebDriver _driver;
         private LoginPage _loginPage;
-
-        /// <summary>
-        /// Not good solution from performance perspective to open browser before any tests in real project!
-        /// </summary>
-        
+       
         #region SetUp and TearDown
         [SetUp]
         public void StartTests()
@@ -54,7 +50,7 @@ namespace Atest.Suites
             _loginPage.LoginAs(new UserData(login, password));
             return _loginPage.invalidLoginAlertText;
         }
-             
+
 
     }
 }

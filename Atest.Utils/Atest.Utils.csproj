@@ -58,6 +58,7 @@
     <Compile Include="Browser.cs" />
     <Compile Include="IBrowser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaitHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

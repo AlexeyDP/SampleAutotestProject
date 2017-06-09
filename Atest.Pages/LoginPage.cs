@@ -1,17 +1,18 @@
 ﻿using Atest.Pages.Data;
+using static Atest.Utils.WaitHelper;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using Atest.Utils;
 
 namespace Atest.Pages
 {
     public class LoginPage 
     {
-        #region Private
+        #region Fields
         private readonly string PageUrl = "http:////www.phptravels.net//login";
         private string PageTitle = "Login";
         private IWebDriver _driver;
-        #endregion Private
+        #endregion Fields
 
         #region Constructors
         public LoginPage(IWebDriver driver)
@@ -29,23 +30,20 @@ namespace Atest.Pages
         }
         #endregion Properties
 
-        #region Elements
-        public IWebElement userEmail{ get { return _driver.FindElement(By.Name("username")); }} 
-
-        public IWebElement userPassword { get { return _driver.FindElement(By.Name("password")); } }
-
-        public IWebElement rememberMeCheckBox { get { return _driver.FindElement(By.Id("remember-me")); } }
-
-        public IWebElement loginButton { get { return _driver.FindElement(By.CssSelector("#loginfrm > div.wow.fadeIn.animated > button")); } }
-        public string invalidLoginAlertText { get { return _driver.FindElement(By.ClassName("alert alert-danger")).Text; } }
-
+        #region Elements        
+        public IWebElement userEmail { get { return WaitForClickable(_driver, By.Name("username")); } }
+        public IWebElement userPassword { get { return WaitForClickable(_driver, By.Name("password")); } }
+        public IWebElement rememberMeCheckBox { get { return WaitForClickable(_driver, By.CssSelector("#loginfrm > div.wow.fadeIn.animated > button")); } }
+        public IWebElement loginButton { get { return WaitForClickable(_driver, By.Name("password")); } }
+        public string invalidLoginAlertText { get { return WaitForVisible(_driver, By.XPath("//div[@class='alert alert-danger']")).Text; } }
         #endregion Elements
-                 
+
         public AccountPage LoginAs(UserData userCredentials, bool remember = false)
         {
             userEmail.SendKeys(userCredentials.userEmail);
-            userPassword.SendKeys(userCredentials.userPass);
+            userPassword.SendKeys(userCredentials.userPass); 
             if (remember) { rememberMeCheckBox.Click(); }
+
             loginButton.Click();
 
             return new AccountPage(_driver);

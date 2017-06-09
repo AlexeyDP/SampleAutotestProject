@@ -6,6 +6,5 @@ D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.Support.d
 D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\nunit.framework.xml
 D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.xml
 D:\CustomProject\SampleAutotestProject\Atest.Utils\bin\Debug\WebDriver.Support.xml
-D:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.csprojResolveAssemblyReference.cache
 D:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.dll
 D:\CustomProject\SampleAutotestProject\Atest.Utils\obj\Debug\Atest.Utils.pdb
