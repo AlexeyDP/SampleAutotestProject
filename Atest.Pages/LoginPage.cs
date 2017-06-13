@@ -19,22 +19,16 @@ namespace Atest.Pages
         {
             _driver = driver;
             _driver.Navigate().GoToUrl(PageUrl);
+            WaitForPageLoad(_driver);
             Assert.AreEqual(PageTitle, _driver.Title);
         }
         #endregion Constructors
-
-        #region Properties
-        public string Title
-        {
-            get { return PageTitle; }
-        }
-        #endregion Properties
 
         #region Elements        
         public IWebElement userEmail { get { return WaitForClickable(_driver, By.Name("username")); } }
         public IWebElement userPassword { get { return WaitForClickable(_driver, By.Name("password")); } }
         public IWebElement rememberMeCheckBox { get { return WaitForClickable(_driver, By.CssSelector("#loginfrm > div.wow.fadeIn.animated > button")); } }
-        public IWebElement loginButton { get { return WaitForClickable(_driver, By.Name("password")); } }
+        public IWebElement loginButton { get { return WaitForClickable(_driver, By.CssSelector("#loginfrm > div.wow.fadeIn.animated > button")); } }
         public string invalidLoginAlertText { get { return WaitForVisible(_driver, By.XPath("//div[@class='alert alert-danger']")).Text; } }
         #endregion Elements
 
@@ -44,7 +38,8 @@ namespace Atest.Pages
             userPassword.SendKeys(userCredentials.userPass); 
             if (remember) { rememberMeCheckBox.Click(); }
 
-            loginButton.Click();
+            loginButton.Click();            
+            WaitAjax(_driver);
 
             return new AccountPage(_driver);
            

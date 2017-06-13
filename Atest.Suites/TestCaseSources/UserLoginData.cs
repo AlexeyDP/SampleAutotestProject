@@ -20,7 +20,7 @@ namespace Atest.Suites.TestCaseSources
         {
             get
             {
-                yield return new TestCaseData("user@phptravels.com", "demouser").Returns("My Account");
+                yield return new TestCaseData("user@phptravels.com", "demouser");
             }
         }
 

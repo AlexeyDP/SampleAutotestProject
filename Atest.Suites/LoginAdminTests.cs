@@ -30,18 +30,12 @@ namespace Atest.Suites
         }
         #endregion SetUp and TearDown
 
-        [Test]
-        public void OpenLogin()
-        {
-            Assert.AreEqual(_loginPage.Title, _driver.Title);
-            
-        }
-
+        
         [Test, TestCaseSource(typeof(UserLoginData), "PositiveLogins")]
-        public string PositiveLoginTest(string login, string password)
+        public void PositiveLoginTest(string login, string password)
         {
             AccountPage accPage = _loginPage.LoginAs(new UserData(login, password));
-            return accPage.Title;
+            Assert.AreEqual(accPage.ExpectedTitle, accPage.Title);      
         }
 
         [Test, TestCaseSource(typeof(UserLoginData), "NegativeLogins")]

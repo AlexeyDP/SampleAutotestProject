@@ -26,5 +26,19 @@ namespace Atest.Utils
 
             return elem = wait.Until(ExpectedConditions.ElementIsVisible(elementSelector));
         }
+
+        public static void WaitForPageLoad(IWebDriver webDriver)
+        {
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)webDriver;
+            WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            wait.Until(delegate (IWebDriver d) { return (bool)(jsExec).ExecuteScript("return document.readyState == 'complete'"); });
+        }
+
+        public static void WaitAjax(IWebDriver webDriver)
+        {
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)webDriver;
+            WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            wait.Until(delegate (IWebDriver d) { return (bool)(jsExec).ExecuteScript("return (typeof($) === 'undefined') ? true : !$.active;"); });
+        }
     }
 }
