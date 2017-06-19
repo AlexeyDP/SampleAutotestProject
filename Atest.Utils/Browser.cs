@@ -16,7 +16,10 @@ namespace Atest.Utils
             options.AddUserProfilePreference("safebrowsing.enabled", true);
             options.AddArgument("--disable-extensions");
 
-            return new ChromeDriver(chromeDriverPath, options);
+            IWebDriver webdriver = new ChromeDriver(chromeDriverPath, options);
+            webdriver.Manage().Window.Maximize();
+
+            return webdriver;
             
         }
 

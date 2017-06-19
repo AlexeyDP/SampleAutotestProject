@@ -45,6 +45,5 @@ namespace Atest.Suites
             return _loginPage.invalidLoginAlertText;
         }
 
-
     }
 }

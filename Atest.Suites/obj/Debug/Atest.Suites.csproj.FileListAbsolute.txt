@@ -13,3 +13,4 @@ D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\WebDriver.Support.
 D:\CustomProject\SampleAutotestProject\Atest.Suites\obj\Debug\Atest.Suites.csprojResolveAssemblyReference.cache
 D:\CustomProject\SampleAutotestProject\Atest.Suites\obj\Debug\Atest.Suites.dll
 D:\CustomProject\SampleAutotestProject\Atest.Suites\obj\Debug\Atest.Suites.pdb
+D:\CustomProject\SampleAutotestProject\Atest.Suites\bin\Debug\Atest.Suites.dll.config
