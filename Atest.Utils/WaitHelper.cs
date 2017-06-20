@@ -16,7 +16,6 @@ namespace Atest.Utils
             WebDriverWait wait = new WebDriverWait(webdriver, TimeSpan.FromSeconds(timeout));
 
             return elem = wait.Until(ExpectedConditions.ElementToBeClickable(elementSelector));
-
         }
 
         public static IWebElement WaitForVisible(IWebDriver webdriver, By elementSelector, int timeout = 3)

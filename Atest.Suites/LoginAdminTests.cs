@@ -11,9 +11,11 @@ namespace Atest.Suites
     [TestFixture]
     public class LoginAdminTests
     {
+        #region Fields
         private IWebDriver _driver;
         private LoginPage _loginPage;
-       
+        #endregion Fields
+
         #region SetUp and TearDown
         [SetUp]
         public void StartTests()

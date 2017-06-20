@@ -7,6 +7,7 @@ namespace Atest.Utils
 {
     public class Browser : IBrowser
     {
+        private IWebDriver _webdriver;
         public IWebDriver GetChromeDriver()
         {
             var options = new ChromeOptions();
@@ -16,10 +17,10 @@ namespace Atest.Utils
             options.AddUserProfilePreference("safebrowsing.enabled", true);
             options.AddArgument("--disable-extensions");
 
-            IWebDriver webdriver = new ChromeDriver(chromeDriverPath, options);
-            webdriver.Manage().Window.Maximize();
+            _webdriver = new ChromeDriver(chromeDriverPath, options);
+            _webdriver.Manage().Window.Maximize();
 
-            return webdriver;
+            return _webdriver;
             
         }
 
@@ -32,7 +33,10 @@ namespace Atest.Utils
             ffp.SetPreference("browser.download.manager.closeWhenDone", true);
             ffp.SetPreference("browser.helperApps.neverAsk.saveToDisk", "application/x-zip-compressed;application/xml;text/xml;text/comma-separated-values;text/csv;application/csv;application/excel;application/vnd.ms-excel;application/vnd.msexcel;text/anytext;");
 
-            return new FirefoxDriver(ffp);
+            _webdriver = new FirefoxDriver(ffp);
+            _webdriver.Manage().Window.Maximize();
+
+            return _webdriver;
         }
 
         public IWebDriver GetIeDriver()
@@ -44,7 +48,10 @@ namespace Atest.Utils
                 EnableNativeEvents = true
             };
 
-            return new InternetExplorerDriver(internetExplorerOptions);
+            _webdriver =  new InternetExplorerDriver(internetExplorerOptions);
+            _webdriver.Manage().Window.Maximize();
+
+            return _webdriver;
         }
     }
 }
