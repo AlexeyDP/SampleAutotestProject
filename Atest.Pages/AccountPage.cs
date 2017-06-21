@@ -12,6 +12,8 @@ namespace Atest.Pages
         private readonly string PageUrl = "http:////www.phptravels.net//account//";               
         private string _expectedPageTitle = "My Account";
         protected IWebDriver driver;
+        private By ProfileNavBar = By.CssSelector("div > div.col-md-1.offset-0 > ul");
+        private By NavBarTabs = By.XPath("//ul[@class='nav profile-tabs']//a");
         #endregion Fields
 
         #region Properties
@@ -31,8 +33,8 @@ namespace Atest.Pages
         {
             get
             {
-                WaitForVisible(driver, By.CssSelector("div > div.col-md-1.offset-0 > ul"));
-                return driver.FindElements(By.XPath("//ul[@class='nav profile-tabs']//a"));
+                driver.WaitForVisible(ProfileNavBar);
+                return driver.FindElements(NavBarTabs);
             }
         }
 
@@ -48,7 +50,7 @@ namespace Atest.Pages
             if (!foundTabs.Any()) throw new NoSuchElementException($"Tab with the name {tabName} is not found");
 
             foundTabs.Single().Click();           
-            WaitAjax(driver);            
+            driver.WaitAjax();            
         }
         #endregion Private
 

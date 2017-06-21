@@ -10,7 +10,7 @@ namespace Atest.Utils
 {
     public static class WaitHelper
     {
-        public static IWebElement WaitForClickable(IWebDriver webdriver, By elementSelector, int timeout = 3)
+        public static IWebElement WaitForClickable(this IWebDriver webdriver, By elementSelector, int timeout = 3)
         {
             IWebElement elem;
             WebDriverWait wait = new WebDriverWait(webdriver, TimeSpan.FromSeconds(timeout));
@@ -18,7 +18,7 @@ namespace Atest.Utils
             return elem = wait.Until(ExpectedConditions.ElementToBeClickable(elementSelector));
         }
 
-        public static IWebElement WaitForVisible(IWebDriver webdriver, By elementSelector, int timeout = 3)
+        public static IWebElement WaitForVisible(this IWebDriver webdriver, By elementSelector, int timeout = 3)
         {
             IWebElement elem;
             WebDriverWait wait = new WebDriverWait(webdriver, TimeSpan.FromSeconds(timeout));
@@ -26,14 +26,14 @@ namespace Atest.Utils
             return elem = wait.Until(ExpectedConditions.ElementIsVisible(elementSelector));
         }
 
-        public static void WaitForPageLoad(IWebDriver webDriver)
+        public static void WaitForPageLoad(this IWebDriver webDriver)
         {
             IJavaScriptExecutor jsExec = (IJavaScriptExecutor)webDriver;
             WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
             wait.Until(delegate (IWebDriver d) { return (bool)(jsExec).ExecuteScript("return document.readyState == 'complete'"); });
         }
 
-        public static void WaitAjax(IWebDriver webDriver)
+        public static void WaitAjax(this IWebDriver webDriver)
         {
             IJavaScriptExecutor jsExec = (IJavaScriptExecutor)webDriver;
             WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));

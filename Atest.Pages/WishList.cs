@@ -1,15 +1,19 @@
-﻿using OpenQA.Selenium;
-using System;
+﻿using Atest.Utils;
+using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Atest.Utils.WaitHelper;
+
 
 namespace Atest.Pages
 {
     public class WishList : AccountPage
     {
+        #region Fields
+        private By _wishList = By.Id("wishlist");
+        private By _wishListItems = By.XPath("//div[contains(@id,'wish') and @id!='wishlist']");
+        private By _listItemName = By.XPath(".//a[@class='dark']");
+        #endregion Fields
+
         #region Constructors
         public WishList(IWebDriver driver) : base(driver) { }
         #endregion Constructors
@@ -19,15 +23,15 @@ namespace Atest.Pages
         {
             get
             {
-                WaitForVisible(driver, By.Id("wishlist"));
-                return driver.FindElements(By.XPath("//div[contains(@id,'wish') and @id!='wishlist']"));
+                driver.WaitForVisible(_wishList);
+                return driver.FindElements(_wishListItems);
             }
         }       
         #endregion Elements
 
         public bool IsHotelInWishList(string hotelName)
         {
-            var searchedHotelName = WishListElements.Where(e => e.FindElement(By.XPath(".//a[@class='dark']")).Text == hotelName);
+            var searchedHotelName = WishListElements.Where(e => e.FindElement(_listItemName).Text == hotelName);
             return searchedHotelName.Any();
         }
     }

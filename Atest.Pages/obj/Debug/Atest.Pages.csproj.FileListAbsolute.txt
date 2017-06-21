@@ -1,3 +1,4 @@
+D:\CustomProject\SampleAutotestProject\Atest.Pages\obj\Debug\Atest.Pages.csprojResolveAssemblyReference.cache
 D:\CustomProject\SampleAutotestProject\Atest.Pages\bin\Debug\Atest.Pages.dll
 D:\CustomProject\SampleAutotestProject\Atest.Pages\bin\Debug\Atest.Pages.pdb
 D:\CustomProject\SampleAutotestProject\Atest.Pages\bin\Debug\Atest.Utils.dll
@@ -8,6 +9,5 @@ D:\CustomProject\SampleAutotestProject\Atest.Pages\bin\Debug\Atest.Utils.pdb
 D:\CustomProject\SampleAutotestProject\Atest.Pages\bin\Debug\nunit.framework.xml
 D:\CustomProject\SampleAutotestProject\Atest.Pages\bin\Debug\WebDriver.xml
 D:\CustomProject\SampleAutotestProject\Atest.Pages\bin\Debug\WebDriver.Support.xml
-D:\CustomProject\SampleAutotestProject\Atest.Pages\obj\Debug\Atest.Pages.csprojResolveAssemblyReference.cache
 D:\CustomProject\SampleAutotestProject\Atest.Pages\obj\Debug\Atest.Pages.dll
 D:\CustomProject\SampleAutotestProject\Atest.Pages\obj\Debug\Atest.Pages.pdb
