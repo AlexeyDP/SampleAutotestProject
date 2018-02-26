@@ -2,16 +2,21 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace Atest.Utils
 {
     public class Browser : IBrowser
     {
         private IWebDriver _webdriver;
+
         public IWebDriver GetChromeDriver()
         {
             var options = new ChromeOptions();
-            string chromeDriverPath = @"d:\CustomProject\SampleAutotestProject\packages\Selenium.Chrome.WebDriver.2.29\driver\";
+            string chromeDriverPath = $"{AppDomain.CurrentDomain.BaseDirectory}Resources\\";
             options.AddUserProfilePreference("download.prompt_for_download", false);
             options.AddUserProfilePreference("download.directory_upgrade", true);
             options.AddUserProfilePreference("safebrowsing.enabled", true);
@@ -52,6 +57,11 @@ namespace Atest.Utils
             _webdriver.Manage().Window.Maximize();
 
             return _webdriver;
+        }
+
+        public void DriverClose()
+        {
+            _webdriver.Quit();
         }
     }
 }

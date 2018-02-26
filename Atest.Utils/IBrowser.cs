@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Atest.Utils
 {
@@ -12,5 +7,6 @@ namespace Atest.Utils
         IWebDriver GetFirefoxDriver();
         IWebDriver GetChromeDriver();
         IWebDriver GetIeDriver();
+        void DriverClose();
     }
 }

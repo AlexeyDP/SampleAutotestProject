@@ -11,6 +11,7 @@ namespace Atest.Suites
     public class AccountPageNavigationTests
     {
         #region Fields
+        private IBrowser _browser;
         private IWebDriver _driver;
         private WishList _wishList;
         private UserData defaultCredentials = new UserData(ConfigurationManager.AppSettings["defaultUserName"].ToString(), ConfigurationManager.AppSettings["defaultUserPass"].ToString());        
@@ -20,8 +21,8 @@ namespace Atest.Suites
         [OneTimeSetUp]
         public void StartTests()
         {
-            IBrowser browser = new Browser();
-            _driver = browser.GetChromeDriver();
+            _browser = new Browser();
+            _driver = _browser.GetChromeDriver();
             _wishList = new LoginPage(_driver)
                             .LoginAs(defaultCredentials)
                             .GotoWishList();           
@@ -30,7 +31,7 @@ namespace Atest.Suites
         [OneTimeTearDown]
         public void EndTests()
         {
-            _driver.Quit();
+            _browser.DriverClose();
         }
         #endregion SetUp and TearDown
 

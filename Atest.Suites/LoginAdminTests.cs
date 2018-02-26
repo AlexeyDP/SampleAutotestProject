@@ -12,6 +12,7 @@ namespace Atest.Suites
     public class LoginAdminTests
     {
         #region Fields
+        private IBrowser _browser;
         private IWebDriver _driver;
         private LoginPage _loginPage;
         #endregion Fields
@@ -20,15 +21,15 @@ namespace Atest.Suites
         [SetUp]
         public void StartTests()
         {
-            IBrowser browser = new Browser();
-            _driver = browser.GetChromeDriver();
+            _browser = new Browser();
+            _driver = _browser.GetChromeDriver();
             _loginPage = new LoginPage(_driver);            
         }
 
         [TearDown]
         public void EndTests()
         {
-            _driver.Quit();
+            _browser.DriverClose();
         }
         #endregion SetUp and TearDown
 
