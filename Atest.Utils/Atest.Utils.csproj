@@ -64,6 +64,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="ProxyBrowser.cs" />
+    <Compile Include="RemoteBrowser.cs" />
     <Compile Include="WaitHelper.cs" />
   </ItemGroup>
   <ItemGroup>

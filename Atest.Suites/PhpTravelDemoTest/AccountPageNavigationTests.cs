@@ -5,7 +5,7 @@ using OpenQA.Selenium;
 using System.Configuration;
 using Atest.Pages.Data;
 
-namespace Atest.Suites
+namespace Atest.Suites.PhpTravelDemoTest
 {
     [TestFixture]
     public class AccountPageNavigationTests

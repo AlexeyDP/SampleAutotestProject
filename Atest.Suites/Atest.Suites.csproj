@@ -57,11 +57,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountPageNavigationTests.cs" />
-    <Compile Include="LoginAdminTests.cs" />
+    <Compile Include="PhpTravelDemoTest\AccountPageNavigationTests.cs" />
+    <Compile Include="DevToolsTest\DevToolsSample.cs" />
+    <Compile Include="PhpTravelDemoTest\LoginAdminTests.cs" />
+    <Compile Include="ParallelTests\ParallelizableDemoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SeleniumProxyDemoTest.cs" />
-    <Compile Include="SeleniumProxyTest.cs" />
+    <Compile Include="SeleniumProxyTests\SeleniumProxyDemoTest.cs" />
     <Compile Include="TestCaseSources\UserLoginData.cs" />
   </ItemGroup>
   <ItemGroup>

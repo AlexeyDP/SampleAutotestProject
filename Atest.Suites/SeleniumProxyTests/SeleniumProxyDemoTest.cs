@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 using System;
 using System.Linq;
 
-namespace Atest.Suites
+namespace Atest.Suites.SeleniumProxyTests
 {
     [TestFixture]
     public class SeleniumProxyDemoTest

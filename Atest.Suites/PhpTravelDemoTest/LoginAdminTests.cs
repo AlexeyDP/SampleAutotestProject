@@ -6,7 +6,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace Atest.Suites
+namespace Atest.Suites.PhpTravelDemoTest
 {
     [TestFixture]
     public class LoginAdminTests
